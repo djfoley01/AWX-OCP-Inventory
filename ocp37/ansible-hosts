@@ -24,4 +24,4 @@ ocp-m1-37.foley.core
 [nodes]
 ocp-m1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'type': 'general'}" openshift_schedulable=True
 ocp-i1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'router': 'true', 'type': 'general'}" openshift_schedulable=True
-ocp-n1-37.foley.core openshift_node_labels="{'zone': 'default', 'type': 'general'}" openshift_schedulable=True
+ocp-n1-37.foley.core openshift_node_labels="{'region': 'primary', 'zone': 'default', 'type': 'general'}" openshift_schedulable=True
