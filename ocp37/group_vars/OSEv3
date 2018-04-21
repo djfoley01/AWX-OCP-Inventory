@@ -1,0 +1,19 @@
+ansible_ssh_user: root
+os_sdn_network_plugin_name: 'redhat/openshift-ovs-multitenant'
+deployment_type: openshift-enterprise
+openshift_master_default_subdomain: ocp.ose37.foley.core
+openshift_master_identity_providers: [{'name': 'FoleyAD', 'challenge': 'true', 'login': 'true', 'kind': 'LDAPPasswordIdentityProvider', 'attributes': {'id': ['dn'], 'email': ['mail'], 'name': ['cn'], 'preferredUsername': ['sAMAccountName']}, 'bindDN': 'svcansible@foley.core', 'bindPassword': 'Svc@nsible', 'insecure': 'true', 'url': 'ldap://homedc01.foley.core/CN=Users,DC=foley,DC=core?sAMAccountName?sub?(&(objectClass=person))'}]
+openshift_disable_check: memory_availability,disk_availability
+openshift_release: v3.7
+package_version: 3.7
+openshift_hosted_etcd_storage_kind: nfs
+openshift_hosted_etcd_storage_access_modes: ["ReadWriteOnce"]
+openshift_hosted_etcd_storage_host: homews
+openshift_hosted_etcd_storage_nfs_directory: /exports/ocp37
+openshift_hosted_etcd_storage_volume_name: etcd
+openshift_hosted_etcd_storage_volume_size: 10G
+openshift_hosted_etcd_storage_labels: {'storage': 'etcd'}
+openshift_master_cluster_method: native
+openshift_master_cluster_hostname: ocp-m1-37.foley.core
+openshift_master_cluster_public_hostname: ocp-m1-37.foley.core
+openshift_router_selector: 'router=true'

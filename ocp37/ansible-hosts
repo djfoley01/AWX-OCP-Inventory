@@ -1,0 +1,27 @@
+##########################
+### OSEv3 Server Types ###
+##########################
+[OSEv3:children]
+masters
+nodes
+etcd
+
+##############################
+### host group for masters ###
+##############################
+[masters]
+ocp-m1-37.foley.core
+
+###################################
+### host group for etcd servers ###
+###################################
+[etcd]
+ocp-m1-37.foley.core
+
+##################################################
+### host group for nodes, includes region info ###
+##################################################
+[nodes]
+ocp-m1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'type': 'general'}" openshift_schedulable=True
+ocp-i1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'router': 'true', 'type': 'general'}" openshift_schedulable=True
+ocp-n1-37.foley.core openshift_node_labels="{'zone': 'default', 'type': 'general'}" openshift_schedulable=True
