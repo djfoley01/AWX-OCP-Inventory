@@ -10,18 +10,27 @@ etcd
 ### host group for masters ###
 ##############################
 [masters]
-ocp-m1-37.foley.core
+master1.levvel.internal
+master2.levvel.internal
+master3.levvel.internal
 
 ###################################
 ### host group for etcd servers ###
 ###################################
 [etcd]
-ocp-m1-37.foley.core
+master1.levvel.internal
+master2.levvel.internal
+master3.levvel.internal
 
 ##################################################
 ### host group for nodes, includes region info ###
 ##################################################
 [nodes]
-ocp-m1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'type': 'general'}" openshift_schedulable=True
-ocp-i1-37.foley.core openshift_node_labels="{'region': 'infra', 'zone': 'default', 'router': 'true', 'type': 'general'}" openshift_schedulable=True
-ocp-n1-37.foley.core openshift_node_labels="{'region': 'primary', 'zone': 'default', 'type': 'general'}" openshift_schedulable=True
+master1.levvel.internal openshift_node_labels="{'zone': 'us-east-2a', 'logging-infra-fluentd': 'true'}"
+master2.levvel.internal openshift_node_labels="{'zone': 'us-east-2a', 'logging-infra-fluentd': 'true'}"
+master3.levvel.internal openshift_node_labels="{'zone': 'us-east-2c', 'logging-infra-fluentd': 'true'}"
+infra1.levvel.internal openshift_node_labels="{'zone': 'us-east-2c', 'region': 'infra', 'logging-infra-fluentd': 'true'}"
+infra2.levvel.internal openshift_node_labels="{'zone': 'us-east-2c', 'region': 'infra', 'logging-infra-fluentd': 'true'}"
+node1.levvel.internal openshift_node_labels="{'zone': 'us-east-2a', 'region': 'app', 'logging-infra-fluentd': 'true'}"
+node2.levvel.internal openshift_node_labels="{'zone': 'us-east-2a', 'region': 'app', 'logging-infra-fluentd': 'true'}"
+node3.levvel.internal openshift_node_labels="{'zone': 'us-east-2a', 'region': 'app', 'logging-infra-fluentd': 'true'}"
