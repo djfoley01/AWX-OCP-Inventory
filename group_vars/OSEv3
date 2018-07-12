@@ -4,7 +4,8 @@
 # SSH user, this user should allow ssh based auth without requiring a
 # password. If using ssh key based auth, then the key should be managed by an
 # ssh agent.
-ansible_user: root
+# This can be left out using Ansible Tower, user will be specified in the UI
+#ansible_user: root
 
 # Specify the deployment type. Valid values are origin and openshift-enterprise.
 openshift_deployment_type: openshift-enterprise
