@@ -34,6 +34,7 @@ openshift_enable_unsupported_configurations: True
 
 # Configuring External Docker registry.
 openshift_docker_insecure_registries: 172.31.0.0/16
+#openshift_docker_additional_registries=<ecr-url>
 
 ###############################################################################
 # Authentication  Specifications                                              #
